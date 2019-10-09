@@ -28,7 +28,7 @@
                 $imageFromString = imageCreateFromString($base64decode);
                 if ($imageFromString) {
                 
-                    $fileName = dbName($image['data-filename'], true);
+                    $fileName = $image['data-filename'];
                     $imgFullPath = __DIR__ . '/' . $targetDir . '/' . $fileName;
                     $createFile = imagepng($imageFromString, $imgFullPath, 0);
                     $fileUrl = URL . 'uploads/email/'. $adminId . '/' . $fileName;
